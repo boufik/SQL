@@ -37,13 +37,21 @@ DELETE FROM examples WHERE phrase = 'Hello world';
 ## 6. Inspection queries
 ```
 -- Show all tables in the DB
+.tables
 SELECT name FROM sqlite_master WHERE type='table';
+
+-- Schema of a table
+.schema examples
+
+-- Show row count for a table
+SELECT COUNT(*) FROM examples;
+
 -- Show columns of a table with types
 PRAGMA table_info(examples);
--- Show ndexes on a table
+
+-- Show indexes on a table
 PRAGMA index_list(examples);
--- Show row count
-SELECT COUNT(*) FROM examples;
+
 -- Search by partial text
 SELECT * FROM examples WHERE phrase LIKE '%world%';
 ```
