@@ -36,11 +36,11 @@ DELETE FROM examples WHERE phrase = 'Hello world';
 
 ## 6. Inspection queries
 ```
--- Show all tables in the DB
+-- Show all tables in the DB (The command with . do NOT require a ; to end the line)
 .tables
 SELECT name FROM sqlite_master WHERE type='table';
 
--- Schema of a table
+-- Schema of a table (The command with . do NOT require a ; to end the line)
 .schema examples
 
 -- Show row count for a table
