@@ -1,5 +1,5 @@
 # Basic SQL Operations
-Always, end the commands with `;`
+Always, end the commands with `;`.
 
 ## 1. Create a table
 ```
@@ -21,7 +21,6 @@ INSERT INTO examples (phrase, author) VALUES ('Veni, vidi, vici', 'Caesar');
 ```
 SELECT * FROM examples;
 SELECT phrase FROM examples WHERE author = 'Shakespeare';
-SELECT COUNT(*) FROM examples;
 SELECT * FROM examples ORDER BY author LIMIT 3;
 ```
 
@@ -35,7 +34,21 @@ UPDATE examples SET author = 'Shakespeare' WHERE author = 'W. Shakespeare';
 DELETE FROM examples WHERE phrase = 'Hello world';
 ```
 
-## 6. Drop table
+## 6. Inspection queries
+```
+-- Show all tables in the DB
+SELECT name FROM sqlite_master WHERE type='table';
+-- Show columns of a table with types
+PRAGMA table_info(examples);
+-- Show ndexes on a table
+PRAGMA index_list(examples);
+-- Show row count
+SELECT COUNT(*) FROM examples;
+-- Search by partial text
+SELECT * FROM examples WHERE phrase LIKE '%world%';
+```
+
+## 7. Drop table
 ```
 DROP TABLE examples;
 ```
